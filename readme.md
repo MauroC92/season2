@@ -1,12 +1,12 @@
-# RESPONSIVE DESIGNE AND MOBILE FIRST WEBSITE
+# RESPONSIVE DESIGN AND MOBILE FIRST WEBSITE
 
 Mauro Colombo
 
 ---
 
- GitHub Reposiroty
+ GitHubPages Link
 
-<https://github.com/MauroC92/season2.git>
+<https://mauroc92.github.io/season2/>
 
 1º - Double click in the link to see the web site in your browser
 
