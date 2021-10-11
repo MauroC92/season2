@@ -1,7 +1,7 @@
 .container{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: auto;
     height: 100%;
 }
 
@@ -9,9 +9,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: auto;
     height: 30%;
     background-color: #ffe827;
+    padding: 10px;
 }
 
 .title{
@@ -24,6 +25,7 @@
     letter-spacing: 2px;
     font-weight: 800;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 5px;
 }
 
 .sub-title{
@@ -34,16 +36,18 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px;
 }
 
 .nav{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    width: auto;
     height: 30%;
     background-color: #8c8377;
-    padding-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .nav-bar{
@@ -58,7 +62,7 @@
     text-transform: uppercase;
     border: 1px #ffff solid;
     border-radius: 2px;
-    padding: 3px;
+    padding: 5px;
 }
 
 .nav-bar:hover{
@@ -69,7 +73,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    max-width: auto;
+    width: auto;
     height: 50%;
     background-color: #ffe827;
 }
@@ -97,19 +101,31 @@
     padding: 10px;
 }
 
-.article-t{
-    align-self: center;
+.article{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    background-color: #fffb59;
+    border: #000000 1px solid;
+    border-radius: 10px;
+    margin: 5px;    
+    padding: 5px;
 }
 
 .article-p{
     font-size: 15px;
     color: #000000;
+    padding: 5px;
 }
 
 .article-l{
     color: #000000;
     font-size: 20px;
-    text-decoration: underline;       
+    text-decoration: underline;
+    padding: 5px;       
 }
 
 .article-l:hover{
@@ -129,20 +145,6 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
-}
-
-.article{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: auto;
-    height: auto;
-    background-color: #fffb59;
-    border: #000000 1px solid;
-    border-radius: 10px;
-    margin: 5px;    
-    padding: 5px;
 }
 
 .l-aside{
@@ -184,7 +186,7 @@
 .r-aside{
     order: 2;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     width: auto;
     height: 100%;
@@ -212,16 +214,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
+    width: auto;
     height: 20%;
     background-color: #8c8377;
+    padding: 10px;
 }
 
 .repo-l{
+    
     color: #fffaf2;
     text-transform: uppercase;
     font-size: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px;
 }
 
 .repo-l:hover{
@@ -248,8 +253,9 @@
         text-transform: uppercase;
         border: 1px #ffff solid;
         border-radius: 2px;
-        padding: 3px;
+        padding: 5px;
         text-align: center;
+        margin: 3px;
     }
 
     .nav-bar-2{
@@ -294,6 +300,7 @@
         flex-wrap: nowrap;
         height: auto;
         justify-content: space-around;
+
     }
 
     .nav-bar{
@@ -308,7 +315,7 @@
         text-transform: uppercase;
         border: 1px #ffff solid;
         border-radius: 2px;
-        padding: 3px;
+        padding: 5px;
         text-align: center;
     }
 
