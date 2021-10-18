@@ -1,4 +1,4 @@
-# RESPONSIVE DESIGN AND MOBILE FIRST WEBSITE
+# RESPONSIVE DESIGN, MOBILE FIRST AND DOM MANIPULATION WEBSITE
 
 BaSD 2021 - Radium Rocket
 
@@ -14,10 +14,4 @@ GitHubPages Link
 
 ---
 
-GitHub Repository Link
-
-<https://github.com/MauroC92/season2.git>
-
----
-
-* To view the website locally, download the repository and open index.html in your favorite browser.
+* To view the website locally, download the repository and open index.html or subscribe.html in your favorite browser.

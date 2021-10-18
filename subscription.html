@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./dom.js"></script> 
+        <title>The Chivo's news</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1 class="title">Welcome to "the chivo's news</h1>
+                <h2 class="sub-title">The realtime news</h2>
+                <div class="nav">
+                    <a class="nav-bar-2" href="">☰</a>
+                    <a class="nav-bar" href="">Sports</a>
+                    <a class="nav-bar" href="">Finance</a>
+                    <a class="nav-bar" href="">The World</a>
+                    <a class="nav-bar" href="">Tech</a>
+                    <a class="nav-bar" href="">Local News</a>
+                    <a class="nav-bar" href="">Gaming</a>
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="l-aside">
+                    <div class="secondary-news">
+                        <a class="secondary-title" href="">
+                            Another crime in the Triángulo neighborhood: a man was shot in his home
+                        </a>
+                    </div>
+                    <div class="secondary-news">
+                        <a class="secondary-title" href="">
+                            Coronavirus in Rosario: 19 cases and a total of 72 in the province
+                        </a>
+                    </div>
+                    <div class="secondary-news">
+                        <a class="secondary-title" href="">
+                            Travel abroad: Santa Fe's new protocol for returnees
+                        </a>
+                    </div>
+                    <div class="secondary-news">
+                        <a class="secondary-title" href="">
+                            Nation sends 575 federal agents and creates Unit 7 of the Gendarmerie in Rosario
+                        </a>
+                    </div>
+                    <div class="secondary-news">
+                        <a class="secondary-title" href="">
+                            Former prosecutor Ponce Asahad released in clandestine gambling case
+                        </a>
+                    </div>
+                    <div class="secondary-news">
+                        <a class="secondary-title" href="">
+                            Violent Monday: three murders and five wounded in different shooting attacks
+                        </a>
+                    </div>
+                </div>
+                <div class="section-1">
+                    <form action="/action_page.php" class="form">
+                        <div id="hello" class="title-subscribe">Hello</div>
+                        <div class="sub-form">
+                            <div class="sub-column">
+                                <label for="f-name" class="title-subscribe">Full Name:</label>
+                                <input type="text" id="f-name" class="box" placeholder="Juan Carlos">
+                                <label for="f-name" class="format">More than 6 letters and at least one space in between</label>
+                                <div class="error" id="error-name">ERROR!! NAME FORMAT INVALID</div>
+                                <label for="email" class="title-subscribe">Email:</label>
+                                <input type="email" id="email" class="box" placeholder="mauro.colombo.92@gmail.com">
+                                <label for="f-name" class="format">Valid email format</label>
+                                <div class="error" id="error-email">ERROR!! EMAIL FORMAT INVALID</div>
+                                <label for="pass" class="title-subscribe">Password:</label>
+                                <input type="password" id="pass" class="box" placeholder="JuanCarlos123">
+                                <label for="f-name" class="format">8 or more characters, consisting of letters and numbers</label>
+                                <div class="error" id="error-pass">ERROR!! PASSWORD FORMAT INVALID</div>
+                                <label for="pass-val" class="title-subscribe">Validate Password:</label>
+                                <input type="password" id="pass-val" class="box" placeholder="JuanCarlos123">
+                                <label for="f-name" class="format">Match the password</label>
+                                <div class="error" id="error-pass-val">ERROR!! THE PASSWORDS DON'T MATCH</div>
+                                <label for="age" class="title-subscribe">Age:</label>
+                                <input type="number" id="age" class="box" placeholder="29">
+                                <label for="f-name" class="format">Whole number greater than or equal to 18</label>
+                                <div class="error" id="error-age">ERROR!! AGE FORMAT INVALID</div>
+                            </div>
+                            <div class="sub-column">
+                                <label for="phone" class="title-subscribe">Phone:</label>
+                                <input type="number" id="phone" class="box" placeholder="3412115903">
+                                <label for="f-name" class="format">Number of at least 7 digits, do not accept spaces, hyphens or parentheses</label>
+                                <div class="error" id="error-phone">ERROR!! PHONE FORMAT INVALID</div>
+                                <label for="address" class="title-subscribe">Address:</label>
+                                <input type="text" id="address" class="box" placeholder="Gaboto 916">
+                                <label for="f-name" class="format">At least 5 characters, with letters, numbers and a space in between</label>
+                                <div class="error" id="error-address">ERROR!! ADDRESS FORMAT INVALID</div>
+                                <label for="city" class="title-subscribe">City:</label>
+                                <input type="text" id="city" class="box" placeholder="Rosario">
+                                <label for="f-name" class="format">At least 3 characters</label>
+                                <div class="error" id="error-city">ERROR!! CITY FORMAT INVALID</div>
+                                <label for="postal" class="title-subscribe">Postal Code:</label>
+                                <input type="number" id="postal" class="box" placeholder="2000">
+                                <label for="f-name" class="format">At least 3 characters</label>
+                                <div class="error" id="error-postal">ERROR!! POSTAL CODE FORMAT INVALID</div>
+                                <label for="dni" class="title-subscribe">DNI:</label>
+                                <input type="number" id="dni" class="box" placeholder="36010547">
+                                <label for="f-name" class="format">7 OR 8 DIGIT NUMBER</label>
+                                <div class="error" id="error-dni">ERROR!! DNI FORMAT INVALID</div>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <input type="button" value="Subscribe" id="send-button">
+                        </div>
+                    </form>
+                </div>
+                <div class="r-aside">
+                    <div class="ads-container">
+                        <a href="">
+                            <img class="ads-img" src="./assets/img/ads1.JPG" alt="ads1">
+                        </a>
+                    </div>
+                    <div class="ads-container">
+                        <a href="">
+                            <img class="ads-img" src="./assets/img/ads2.JPG" alt="ads2">
+                        </a>
+                    </div>
+                    <div class="ads-container">
+                        <a href="">
+                            <img class="ads-img" src="./assets/img/ads3.JPG" alt="ads3">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                    <a class="repo-l" href="https://github.com/MauroC92/season2.git">
+                    Link to Mauro Colombo's new GitHub Repository
+                    </a>
+                    <a class="repo-l" href="https://mauroc92.github.io/season2/">
+                    Link to Mauro Colombo's GitHub Pages
+                    </a>
+            </div>
+        </div>
+    </body>
+</html>
