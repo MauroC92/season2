@@ -237,6 +237,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .sub-form{
@@ -248,11 +249,12 @@
 .sub-column{
     display: flex;
     flex-direction: column;
-    width: calc(100%/2);
+    width: 100%;
+    height: auto;
 }
 
 .box{
-    max-width: auto;
+    width: auto;
     background-color: #fffb59;
     border-radius: 10px;
 }
@@ -280,6 +282,7 @@
     font-weight: 800;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 5px;
+    height: 20px;
 }
 
 .format{
@@ -292,6 +295,7 @@
     font-weight: 800;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 5px;
+    height: 20px;
 }
 
 #hello{
@@ -306,6 +310,37 @@
     font-size: 20px;
     color: #fffb59;
     text-transform: uppercase;
+}
+
+#modal-id{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-content{
+    background-color: #8c8377;
+    margin: 20% auto;
+    width: 70%;
+    padding: 20px;
+}
+
+#x-btn{
+    color: #000000;
+    float: right;
+    font-size: 30px;
+}
+
+#x-btn:hover,#x-btn:focus{
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {    
@@ -371,6 +406,11 @@
     .sub-form{
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    .sub-column{
+        width: calc(100%/2);
+        height: 100%;
     }
 }
 
@@ -441,5 +481,9 @@
     .sub-form{
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    .sub-column{
+        width: calc(100%/2);
     }
 }

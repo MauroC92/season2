@@ -21,7 +21,6 @@ window.onload = function(){
     var errorPostal = document.getElementById('error-postal');
     var errorDNI = document.getElementById('error-dni');
 
-
     var checkName = document.getElementById('f-name');
     var checkEmail = document.getElementById('email');
     var checkPass = document.getElementById('pass');
@@ -56,7 +55,7 @@ window.onload = function(){
         } else {
             return 0;
         }
-    }
+    }   
 
     function errorHiddenName(){
         errorName.style.visibility = 'hidden';
@@ -251,90 +250,6 @@ window.onload = function(){
 
     checkDNI.addEventListener('focus', errorHiddenDni);
 
-    // Send Validation
-
-    function validateName(){
-        if (nameListener() === 0) {
-            return checkName.value;
-        } else {
-            return 'NAME ERROR';
-        }
-    }
-
-    function validateEmail(){
-        if (emailListener() === 0) {
-            return checkEmail.value;
-        } else {
-            return 'EMAIL ERROR';
-        }
-    }
-
-    function validatePass(){
-        if (passListener() === 0) {
-            return checkPass.value;
-        } else {
-            return 'PASS ERROR';
-        }
-    }
-
-    function validateAge(){
-        if (ageListener() === 0) {
-            return checkAge.value;
-        } else {
-            return 'AGE ERROR';
-        }
-    }
-
-    function validatePhone(){
-        if (phoneListener() === 0) {
-            return checkPhone.value;
-        } else {
-            return 'PHONE ERROR';
-        }
-    }
-
-    function validateAddress(){
-        if (addressListener() === 0) {
-            return checkAddress.value;
-        } else {
-            return 'ADDRESS ERROR';
-        }
-    }
-
-    function validateCity(){
-        if (cityListener() === 0) {
-            return checkCity.value;
-        } else {
-            return 'CITY ERROR';
-        }
-    }
-
-    function validatePostal(){
-        if (postalListener() === 0) {
-            return checkPostal.value;
-        } else {
-            return 'POSTAL CODE ERROR';
-        }
-    }
-
-    function validateDni(){
-        if (dniListener() === 0) {
-            return checkDNI.value;
-        } else {
-            return 'DNI ERROR';
-        }
-    }
-
-    function validateAll(){
-        alert('Full Name = ' + validateName() + ' ; ' + 'Email = ' + validateEmail() + ' ; ' + 'Pass = ' + validatePass() + ' ; ' + 'Age = ' + validateAge() + ' ; ' 
-            + 'Phone = ' + validatePhone() + ' ; ' + 'Address = ' + validateAddress() + ' ; ' + 'City = ' + validateCity() + ' ; ' + 'Postal Code = ' + validatePostal() + ' ; '
-            + 'DNI = ' + validateDni());
-    }
-
-    sendBtn.onclick = function (){
-        validateAll();
-    }
-
     // BONUS
 
     var helloWorld = document.getElementById('hello');
@@ -343,36 +258,90 @@ window.onload = function(){
             helloWorld.innerText = 'Hello ' + e.target.value;
     }
 
-    checkName.addEventListener('keydown', addText);
+    checkName.addEventListener('keyup', addText);
 
+    // MODAL CLOSE
 
+    var modalBtn = document.getElementById('x-btn');
+    var modal = document.getElementById('modal-id');
 
+    function closeModal() {
+        modal.style.display = 'none'
+    }
 
+    modalBtn.addEventListener('click', closeModal)
 
+    // HTTP REQUEST
 
+    var modalTitle = document.getElementById('modal-title');
+    var modalData = document.getElementById('modal-data');
 
+    function errorModal(err) {
+        modal.style.display = 'block';
+        modalTitle.innerText = 'Something went wrong';
+        modalData.innerHTML = `<li>${err}</li>`;
+    }
 
+    function successfullModal(data) {
+        var jsonToString = JSON.stringify(data);
+        modal.style.display = 'block';
+        modalTitle.innerText = 'Successfull Register!';
+        modalData.innerHTML = `<li>${jsonToString}</li>`;
+        window.localStorage.setItem('nameStorage', checkName.value);
+        window.localStorage.setItem('emailStorage', checkEmail.value);
+        window.localStorage.setItem('ageStorage', checkAge.value);
+        window.localStorage.setItem('phoneStorage', checkPhone.value);
+        window.localStorage.setItem('addressStorage', checkAddress.value);
+        window.localStorage.setItem('cityStorage', checkCity.value);
+        window.localStorage.setItem('postalStorage', checkPostal.value);
+        window.localStorage.setItem('dniStorage', checkDNI.value);
+    }
 
+    sendBtn.onclick = function (){  
+        var url = `https://curso-dev-2021.herokuapp.com/newsletter?name=${checkName.value}&email=${checkEmail.value}`;
+        fetch(url)
+            .then(function (res){
+                if (res.status === 200){
+                return res.json();
+                }
+                else{
+                return res.text()
+                .then (function (msg){
+                    throw new Error(msg);
+                })
+                }
+            })
+            .then(function (data){
+                successfullModal(data);
+            })
+            .catch(function (err){
+                errorModal(err);
+            })
+            
+    }
 
+    
 
+    function getLocalStorage() {
+        var currentUserName = localStorage.getItem('nameStorage');
+        var currentUserEmail = localStorage.getItem('emailStorage');
+        var currentUserAge = localStorage.getItem('ageStorage');
+        var currentUserPhone = localStorage.getItem('phoneStorage');
+        var currentUserAddress = localStorage.getItem('addressStorage');
+        var currentUserCity = localStorage.getItem('cityStorage');
+        var currentUserPostal= localStorage.getItem('postalStorage');
+        var currentUserDni = localStorage.getItem('dniStorage');
 
+    
+        checkName.value = currentUserName;
+        checkEmail.value = currentUserEmail;
+        checkAge.value = currentUserAge;
+        checkPhone.value = currentUserPhone;
+        checkAddress.value = currentUserAddress;
+        checkCity.value = currentUserCity;
+        checkPostal.value = currentUserPostal;
+        checkDNI.value = currentUserDni;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    getLocalStorage();
 }
-
